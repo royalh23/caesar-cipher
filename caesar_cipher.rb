@@ -11,10 +11,17 @@ def caesar_cipher(string, shift_factor)
   first_array = string.split("")
 
   # Looping over the arrays
-  alphabet.each do |alphabet_letter|
-    first_array.each do |string_letter|
-      if string_letter == alphabet_letter
+  first_array.each do |string_letter|
+    # Check if the string letter is a space 
+    if string_letter == " "
+      final_str_array.push(string_letter)
+    end
+    alphabet.each do |alphabet_letter|
+      if string_letter.downcase == alphabet_letter
         index = alphabet.index(alphabet_letter) + shift_factor
+        if index >= 26
+          index -= 26
+        end
         final_str_array.push(alphabet[index])
       end
     end
@@ -22,4 +29,4 @@ def caesar_cipher(string, shift_factor)
   final_string = final_str_array.join
 end
 
-puts caesar_cipher("abcd", 5)
+puts caesar_cipher("What a string!", 5)
