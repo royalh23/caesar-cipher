@@ -1,5 +1,3 @@
-require "pry-byebug"
-
 def caesar_cipher(string, shift_factor)
   # An array to store the letters of the encoded string
   final_str_array = []
@@ -40,5 +38,3 @@ def caesar_cipher(string, shift_factor)
   end
   final_string = final_str_array.join
 end
-
-puts caesar_cipher("What a string!", 5)
