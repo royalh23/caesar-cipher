@@ -12,15 +12,27 @@ def caesar_cipher(string, shift_factor)
 
   # Looping over the arrays
   first_array.each do |string_letter|
-    # Check if the string letter is a space 
+    # Check if the string_letter is a space 
     if string_letter == " "
+      final_str_array.push(string_letter)
+    end
+
+    # Check if the string_letter is a symbol or a punctuation mark
+    if %w(! @ # $ % ^ & * < > ?).include?(string_letter)
       final_str_array.push(string_letter)
     end
     alphabet.each do |alphabet_letter|
       if string_letter.downcase == alphabet_letter
         index = alphabet.index(alphabet_letter) + shift_factor
+
+        # Check if the index number exceeds 26 and adjust it accordingly 
         if index >= 26
           index -= 26
+        end
+
+        # Check if the string_letter is in uppercase
+        if string_letter == string_letter.upcase
+          alphabet[index].upcase!
         end
         final_str_array.push(alphabet[index])
       end
