@@ -19,6 +19,8 @@ def caesar_cipher(string, shift_factor)
     if %w(! @ # $ % ^ & * < > ?).include?(string_letter)
       final_str_array.push(string_letter)
     end
+    
+    # Loop over the alphabet
     alphabet.each do |alphabet_letter|
       if string_letter.downcase == alphabet_letter
         index = alphabet.index(alphabet_letter) + shift_factor
