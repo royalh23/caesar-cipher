@@ -1,1 +1,1 @@
-This is a Ruby project which encodes given strings using the Caesar's Cipher encryption method.
+This Ruby program encodes given strings using the Caesar's Cipher encryption method.
